@@ -71,7 +71,7 @@
 
 // Author info of this build printed to the host during boot and M115
 #define STRING_CONFIG_H_AUTHOR "(1138-4EB, Geeetech Průša i3 Pro B BLTouch config)" // Who made the changes.
-//#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
+#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
  * *** VENDORS PLEASE READ ***
@@ -85,7 +85,7 @@
  */
 
 // Show the Marlin bootscreen on startup. ** ENABLE FOR PRODUCTION **
-#define SHOW_BOOTSCREEN
+//#define SHOW_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Bootscreen.h on startup.
 //#define SHOW_CUSTOM_BOOTSCREEN
@@ -131,7 +131,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "i3 Pro B"
+#define CUSTOM_MACHINE_NAME "PLArio"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -749,7 +749,7 @@
  */
 #define PRO_B_WITH_LEADSCREW
 #if ENABLED(PRO_B_WITH_LEADSCREW)       // M8 leadscrew version
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.53, 80.53, 400, 94 }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.53, 80.53, 400, 105 }
 #else                                   // M8 threaded rod version
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 78.74, 78.74, 400, 105 }
 #endif
@@ -912,7 +912,7 @@
  */
 #define BLTOUCH
 #if ENABLED(BLTOUCH)
-#define BLTOUCH_DELAY 375   // (ms) Enable and increase if needed
+#define BLTOUCH_DELAY 500   // (ms) Enable and increase if needed
 #endif
 
 
@@ -1001,7 +1001,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -25, -41, -2.65 }
+#define NOZZLE_TO_PROBE_OFFSET { -25, -41, -2.55 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1248,8 +1248,8 @@
  *   With an LCD controller the process is guided step-by-step.
  */
 //#define AUTO_BED_LEVELING_3POINT
-#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+//#define AUTO_BED_LEVELING_LINEAR
+#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -1281,9 +1281,9 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-  //#define G26_MESH_VALIDATION
+  #define G26_MESH_VALIDATION
   #if ENABLED(G26_MESH_VALIDATION)
-    #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
+    #define MESH_TEST_NOZZLE_SIZE    0.3  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
     #define MESH_TEST_HOTEND_TEMP  205    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
     #define MESH_TEST_BED_TEMP      60    // (°C) Default bed temperature for the G26 Mesh Validation Tool.
@@ -1731,7 +1731,7 @@
  *
  * :[0:'Classic', 1:'Průša']
  */
-#define LCD_INFO_SCREEN_STYLE 0
+#define LCD_INFO_SCREEN_STYLE 1
 
 /**
  * SD CARD
