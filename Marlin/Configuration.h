@@ -70,7 +70,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(1138-4EB, Geeetech Průša i3 Pro B BLTouch config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "René Pasold" // Who made the changes.
 #define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -684,15 +684,15 @@
  *          TMC5130, TMC5130_STANDALONE, TMC5160, TMC5160_STANDALONE
  * :['A4988', 'A5984', 'DRV8825', 'LV8729', 'L6470', 'L6474', 'POWERSTEP01', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2160', 'TMC2160_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC2209', 'TMC2209_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE', 'TMC5160', 'TMC5160_STANDALONE']
  */
-//#define X_DRIVER_TYPE  A4988
-//#define Y_DRIVER_TYPE  A4988
-//#define Z_DRIVER_TYPE  A4988
+#define X_DRIVER_TYPE  TMC2208_STANDALONE
+#define Y_DRIVER_TYPE  TMC2208_STANDALONE
+#define Z_DRIVER_TYPE  TMC2208_STANDALONE
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
-//#define E0_DRIVER_TYPE A4988
+#define E0_DRIVER_TYPE TMC2208_STANDALONE
 //#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
@@ -749,7 +749,7 @@
  */
 #define PRO_B_WITH_LEADSCREW
 #if ENABLED(PRO_B_WITH_LEADSCREW)       // M8 leadscrew version
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.53, 80.53, 400, 105 }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.53, 80.53, 400, 101 }
 #else                                   // M8 threaded rod version
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 78.74, 78.74, 400, 105 }
 #endif
@@ -1001,7 +1001,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -25, -41, -2.55 }
+#define NOZZLE_TO_PROBE_OFFSET { -25, -41, -2.23 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1101,15 +1101,15 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR true
-#define INVERT_Y_DIR true
-#define INVERT_Z_DIR false
+#define INVERT_X_DIR false
+#define INVERT_Y_DIR false
+#define INVERT_Z_DIR true
 
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
-#define INVERT_E1_DIR true
+#define INVERT_E0_DIR false
+#define INVERT_E1_DIR false
 #define INVERT_E2_DIR true
 #define INVERT_E3_DIR true
 #define INVERT_E4_DIR true
@@ -1146,7 +1146,7 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS (-X_MIN_POS+X_BED_SIZE)
 #define Y_MAX_POS (-Y_MIN_POS+Y_BED_SIZE)
-#define Z_MAX_POS 185
+#define Z_MAX_POS 160
 
 /**
  * Software Endstops
