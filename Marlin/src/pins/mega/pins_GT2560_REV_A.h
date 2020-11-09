@@ -71,6 +71,11 @@
 #define Z_DIR_PIN                             39
 #define Z_ENABLE_PIN                          35
 
+// In case of 2nd extruder slot is used as 2nd Z
+#define Z2_STEP_PIN                           49
+#define Z2_DIR_PIN                            47
+#define Z2_ENABLE_PIN                         48
+
 #define E0_STEP_PIN                           43
 #define E0_DIR_PIN                            45
 #define E0_ENABLE_PIN                         41
